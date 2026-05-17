@@ -1,0 +1,907 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- TITLE TAG -->
+<title>X Horizon Arcade | Your Journey Starts In Space</title>
+
+<!-- URL EXAMPLE -->
+<!-- https://xhorizonarcade.com -->
+
+<meta name="description"
+content="X Horizon Arcade official futuristic arcade leaderboard website.">
+
+<!-- TYPOGRAPHY -->
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=League+Spartan:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#FFFFFF;
+    font-family:'League Spartan', sans-serif;
+    overflow-x:hidden;
+}
+
+/* =================================
+   NAVBAR
+================================= */
+
+nav{
+    width:100%;
+    background:#1D2935;
+    border-bottom:4px solid #E5AF1A;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 6%;
+
+    position:fixed;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:70px;
+}
+
+/* IMAGE ALT TEXT */
+.logo img{
+    object-fit:contain;
+}
+
+.logo h1{
+    font-family:'Bungee', cursive;
+    color:#C62828;
+    font-size:42px;
+	
+	  -webkit-text-stroke: 1px #E5AF1A;
+
+    font-size:42px;
+}
+
+nav ul{
+    display:flex;
+    gap:40px;
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#FFFFFF;
+    font-family:'Bungee', cursive;
+    font-size:18px;
+    transition:0.3s;
+    position:relative;
+}
+
+nav ul li a:hover{
+    color:#E5AF1A;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:4px;
+
+    background:#E5AF1A;
+
+    transition:0.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* =================================
+   HERO SECTION
+================================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+
+    padding:140px 8%;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+    url('https://scontent.fcgy1-3.fna.fbcdn.net/v/t39.30808-6/701538262_122110020068700144_2171285430740152429_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=clYWeEDCvyEQ7kNvwEPpG0n&_nc_oc=Adoxnp9S0ZHJ-7OBTfZSrtx1YpaJntK0c740UNM_f5ofbctYssvotcM1vEo_NTX6ErereVzYSe61j4Vz_xFj8UvJ&_nc_zt=23&_nc_ht=scontent.fcgy1-3.fna&_nc_gid=Y0U4-jLjztEXYBf8GKPzNA&_nc_ss=7b2a8&oh=00_Af6tnG_K5vt8BzQ4WyhaXiOsxb5H0JjwJ1-3Yeas1PcZhA&oe=6A10025E');
+
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+}
+
+.hero-content{
+    max-width:1000px;
+}
+
+.hero-logo{
+    width:240px;
+    margin-bottom:30px;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+.hero h2{
+    font-family:'Bungee', cursive;
+    font-size:90px;
+    line-height:1.1;
+    color:#E5AF1A;
+
+    text-shadow:
+    0 0 10px rgba(229,175,26,0.6),
+    0 0 20px rgba(229,175,26,0.5);
+}
+
+.hero p{
+    margin-top:30px;
+
+    color:#FFFFFF;
+
+    font-size:32px;
+    line-height:1.7;
+}
+
+.hero button{
+    margin-top:40px;
+
+    background:#C72A28;
+    color:#FFFFFF;
+
+    border:none;
+    border-radius:60px;
+
+    padding:22px 60px;
+
+    font-family:'Bungee', cursive;
+    font-size:24px;
+
+    cursor:pointer;
+
+    border:5px solid #E5AF1A;
+
+    transition:0.3s;
+}
+
+.hero button:hover{
+    transform:scale(1.05);
+    background:#E5AF1A;
+    color:#1D2935;
+}
+
+/* =================================
+   SECTION TITLE
+================================= */
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h3{
+    font-family:'Bungee', cursive;
+    font-size:65px;
+    color:#C72A28;
+}
+
+.section-line{
+    width:350px;
+    height:5px;
+    background:#E5AF1A;
+
+    margin:15px auto;
+    border-radius:20px;
+}
+
+/* =================================
+   LEADERBOARD
+================================= */
+
+.leaderboard{
+    padding:100px 7%;
+    background:#FFFFFF;
+}
+
+.board{
+    background:#FFFFFF;
+
+    border:6px solid #E5AF1A;
+    border-radius:30px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.board-header,
+.board-row{
+    display:grid;
+    grid-template-columns:1fr 3fr 2fr 2fr;
+
+    align-items:center;
+
+    padding:30px;
+}
+
+.board-header{
+    background:#C72A28;
+
+    color:#FFFFFF;
+
+    font-family:'Bungee', cursive;
+    font-size:24px;
+}
+
+.board-row{
+    color:#1D2935;
+    font-size:28px;
+
+    border-top:1px solid #ddd;
+
+    transition:0.3s;
+}
+
+.board-row:hover{
+    background:#f8f8f8;
+}
+
+.player{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.player img{
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    border:4px solid #E5AF1A;
+}
+
+.rank{
+    font-family:'Bungee', cursive;
+    color:#C72A28;
+}
+
+/* =================================
+   PRIZEPOOL SHOWCASE
+================================= */
+
+.prizepool{
+    padding:100px 7%;
+    background:#FFFFFF;
+}
+
+.prize-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+/* ======================
+   MAIN CARD
+====================== */
+
+.prize-card{
+    background:#FFFFFF;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    border:5px solid #E5AF1A;
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+
+    transition:0.35s;
+
+    position:relative;
+}
+
+.prize-card:hover{
+    transform:
+    translateY(-12px)
+    scale(1.03);
+}
+
+/* ======================
+   CARD IMAGE
+====================== */
+
+.prize-card img{
+    width:100%;
+    height:260px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+/* ======================
+   CARD CONTENT
+====================== */
+
+.card-content{
+    padding:30px;
+    text-align:center;
+}
+
+.card-content h4{
+    font-family:'Bungee', cursive;
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+    color:#C72A28;
+
+    -webkit-text-stroke:1px #E5AF1A;
+}
+
+.card-content p{
+    font-size:23px;
+    color: #49371B;
+
+    line-height:1.6;
+}
+
+/* ======================
+   TIER BADGE
+====================== */
+
+.tier-badge{
+    position:absolute;
+
+    top:20px;
+    left:20px;
+
+    background:#C72A28;
+    color:#FFFFFF;
+
+    padding:12px 22px;
+
+    border-radius:40px;
+
+    border:3px solid #E5AF1A;
+
+    font-family:'Bungee', cursive;
+    font-size:15px;
+
+    z-index:5;
+}
+
+/* ======================
+   REWARD TAG
+====================== */
+
+.reward-tag{
+    margin-top:25px;
+
+    display:inline-block;
+
+    padding:12px 24px;
+
+    background:#1D2935;
+    color:#E5AF1A;
+
+    border-radius:40px;
+
+    font-family:'Bungee', cursive;
+    font-size:14px;
+}
+
+/* ======================
+   BRONZE STYLE
+====================== */
+
+.bronze{
+    background:
+    linear-gradient(
+    180deg,
+    #fff6eb,
+    #ffe0bb
+    );
+}
+
+/* ======================
+   SILVER STYLE
+====================== */
+
+.silver{
+    background:
+    linear-gradient(
+    180deg,
+    #ffffff,
+    #ececec
+    );
+}
+
+/* ======================
+   GOLD STYLE
+====================== */
+
+.gold{
+    background:
+    linear-gradient(
+    180deg,
+    #fff8d8,
+    #ffe67f
+    );
+}
+
+/* ======================
+   ULTIMATE STYLE
+====================== */
+
+.ultimate{
+    background:
+    linear-gradient(
+    180deg,
+    #1D2935,
+    #0c1218
+    );
+
+    border:5px solid #C72A28;
+}
+
+.ultimate .card-content h4{
+    color:#FFFFFF;
+}
+
+.ultimate .card-content p{
+    color:#FFFFFF;
+}
+
+.ultimate .reward-tag{
+    background:#C72A28;
+    color:#FFFFFF;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+footer{
+    background:#C72A28;
+
+    padding:35px;
+
+    text-align:center;
+
+    border-top:6px solid #E5AF1A;
+}
+
+footer p{
+    color:#FFFFFF;
+    font-size:26px;
+    font-weight:600;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media(max-width:992px){
+
+.hero h2{
+    font-size:60px;
+}
+
+.hero p{
+    font-size:24px;
+}
+
+.section-title h3{
+    font-size:45px;
+}
+
+.board-header,
+.board-row{
+    font-size:18px;
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+    gap:20px;
+}
+
+nav ul{
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h2{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+.hero button{
+    font-size:18px;
+    padding:18px 40px;
+}
+
+.board-header,
+.board-row{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:15px;
+}
+
+.player{
+    justify-content:center;
+}
+
+.section-title h3{
+    font-size:38px;
+}
+
+.card p{
+    font-size:22px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==========================
+     NAVBAR
+=========================== -->
+
+<nav>
+
+<div class="logo">
+
+<!-- IMAGE ALT TEXT -->
+<img src="C:\Users\Admin\Downloads\logo-removebg-preview.png"
+alt="X Horizon Arcade spaceship logo">
+
+<h1>X HORIZON </h1>
+
+</div>
+
+<ul>
+<li><a href="#">HOME</a></li>
+<li><a href="#">LEADERBOARD</a></li>
+<li><a href="#">REWARDS</a></li>
+<li><a href="#">EVENTS</a></li>
+</ul>
+
+</nav>
+
+<!-- ==========================
+     HERO SECTION
+=========================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<!-- IMAGE ALT TEXT -->
+<img src="C:\Users\Admin\Downloads\logo-removebg-preview.png"
+alt="Official X Horizon Arcade logo"
+class="hero-logo">s
+
+<!-- CONTENT -->
+<h2>
+YOUR JOURNEY<br>
+STARTS IN SPACE
+</h2>
+
+<p>
+Welcome to the X Horizon Leaderboard — 
+the official showcase of top players and highest scores in our space-themed arcade game. 
+Compete, climb the rankings, and dominate the galaxy! 🚀🏆🌌
+</p>
+
+<button>
+ENTER THE ARCADE
+</button>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     LEADERBOARD
+=========================== -->
+
+<section class="leaderboard">
+
+<div class="section-title">
+
+<h3>TOP PLAYERS</h3>
+
+<div class="section-line"></div>
+
+</div>
+
+<div class="board">
+
+<div class="board-header">
+
+<div>RANK</div>
+<div>PLAYER</div>
+<div>SCORE</div>
+<div>TIER</div>
+
+</div>
+
+<div class="board-row">
+
+<div class="rank">#1</div>
+
+<div class="player">
+
+<!-- IMAGE ALT TEXT -->
+<img src="C:\Users\Admin\Downloads\GIRL AVATAR.png"
+alt="Top player profile picture">
+
+<span>Princess Kate</span>
+
+</div>
+
+<div>4,500</div>
+
+<div>ULTIMATE</div>
+
+</div>
+
+<div class="board-row">
+
+<div class="rank">#2</div>
+
+<div class="player">
+
+<img src="C:\Users\Admin\Downloads\BOY AVATAR.png"
+alt="Female arcade player profile image">
+
+<span>Aaron Charl</span>
+
+</div>
+
+<div>1,200</div>
+
+<div>GOLD</div>
+
+</div>
+
+<div class="board-row">
+
+<div class="rank">#3</div>
+
+<div class="player">
+
+<img src="C:\Users\Admin\Downloads\BOY ERA.png"
+alt="Arcade gamer profile picture">
+
+<span>John Derek</span>
+
+</div>
+
+<div>550</div>
+
+<div>SILVER</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =================================
+     PRIZEPOOL SHOWCASE SECTION
+================================= -->
+
+<section class="prizepool">
+
+<div class="section-title">
+
+<h3>PRIZEPOOL SHOWCASE</h3>
+
+<div class="section-line"></div>
+
+</div>
+
+<div class="prize-grid">
+
+    <!-- ======================
+         BRONZE CARD
+    ======================= -->
+
+    <div class="prize-card bronze">
+
+        <div class="tier-badge">
+            BRONZE TIER
+        </div>
+
+        <!-- IMAGE ALT TEXT -->
+        <img src="https://funflavorsbox.com/cdn/shop/files/SB-CANDY-60_1100x.jpg?v=1719344884"
+        alt="Candies and snack pack rewards">
+
+        <div class="card-content">
+
+            <h4>CANDIES & SNACKS</h4>
+
+            <!-- CONTENT -->
+            <p>
+                Sweet rewards and snack packs
+                for beginner players.
+            </p>
+
+            <div class="reward-tag">
+                STARTER REWARD
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ======================
+         SILVER CARD
+    ======================= -->
+
+    <div class="prize-card silver">
+
+        <div class="tier-badge">
+            SILVER TIER
+        </div>
+
+        <img src="https://www.icecreamcake.co.uk/cdn/shop/files/CuteHandmadeDiyWeavingKeychainWoolCrochetUniqueKnittedPendantKeyringBagCharmsWoollyanimalsGiftCarKeyRing-9.png?v=1720281826"
+        alt="Character keychain rewards">
+
+        <div class="card-content">
+
+            <h4>KEYCHAINS</h4>
+
+            <p>
+                Stylish collectible keychains
+                and character keychains.
+            </p>
+
+            <div class="reward-tag">
+                COLLECTIBLE
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ======================
+         GOLD CARD
+    ======================= -->
+
+    <div class="prize-card gold">
+
+        <div class="tier-badge">
+            GOLD TIER
+        </div>
+
+        <img src="https://moosh-moosh.com/cdn/shop/files/Series-1-group-photo-retake-577056.jpg?v=1730481673&width=1445"
+        alt="Cute stuffed toy and plushie rewards">
+
+        <div class="card-content">
+
+            <h4>PLUSHY TOYS</h4>
+
+            <p>
+                Cute stuffed toys and premium
+                plushie rewards.
+            </p>
+
+            <div class="reward-tag">
+                PREMIUM PRIZE
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ======================
+         ULTIMATE CARD
+    ======================= -->
+
+    <div class="prize-card ultimate">
+
+        <div class="tier-badge">
+            ULTIMATE TIER
+        </div>
+
+        <img src="https://img.kwcdn.com/product/fancy/32a7498d-5b21-42f2-ac71-4becc1acf84b.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp"
+        alt="Gaming keyboard and earphones premium rewards">
+
+        <div class="card-content">
+
+            <h4>PREMIUM GEAR</h4>
+
+            <p>
+                Gaming keyboards, earphones,
+                and exclusive prizes.
+            </p>
+
+            <div class="reward-tag">
+                LEGENDARY REWARD
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     FOOTER
+=========================== -->
+
+<footer>
+
+<p>
+© 2026 X Horizon Arcade
+</p>
+
+</footer>
+
+</body>
+</html>
+
